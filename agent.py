@@ -53,7 +53,17 @@ def get_value(number):
 
     if number == 6:
         return str(psutil.cpu_percent())
+    if number == 10:
+        return psutil.virtual_memory().percent
+    if number == 11:
+        return psutil.virtual_memory().free
+    if number == 12:
+        return psutil.virtual_memory().used
+    if number == 13:
+        return psutil.virtual_memory().total
 
+    # Last value
+    return None
     # Last value
     return None
 
