@@ -26,3 +26,18 @@ print "Count services: ", r5.rstrip()
 
 r6 = str(client.get_value(number=6).resultaat)
 print "CPU Usage: ", r6, "%"
+
+r10=float(client.get_value(number=10).resultaat)
+print "Percentage :", r10
+
+r11=float(client.get_value(number=11).resultaat)
+r11a= r11 / 1024 / 1024 / 1024
+print "Geheugen vrij:",round(r11a,2), " GB"
+
+r12=float(client.get_value(number=12).resultaat)
+r12a= r12 / 1024 / 1024 / 1024
+print "Geheugen  in gebruik:",round(r12a,2), " GB"
+
+r13=float(client.get_value(number=13).resultaat)
+r13a= r13 / 1024 / 1024 / 1024
+print "Geheugen totaal",round(r13a,2), " GB"
