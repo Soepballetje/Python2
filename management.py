@@ -45,5 +45,6 @@ client = SoapClient(
 r14 = client.get_value(number=14).resultaat
 print r14
 
-r15 = client.get_value(number=15).resultaat
-print r15
+r15 = float(client.get_value(number=15).resultaat)
+r15a= r15 / 1024 / 1024 / 1024
+print "Totaal vrije ruimte",round(r15a,2), " GB"
