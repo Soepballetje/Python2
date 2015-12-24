@@ -13,6 +13,7 @@ import  psutil
 
 # ---------------------------------------------------------
 
+
 # List of all your agent functions that can be called from within the management script.
 # A real developer should do this differently, but this is more easy.
 def get_value(number):
@@ -64,10 +65,6 @@ def get_value(number):
 
     # Last value
     return None
-    # Last value
-    return None
-
-
 
 
 
