@@ -48,3 +48,7 @@ print r14
 r15 = float(client.get_value(number=15).resultaat)
 r15a= r15 / 1024 / 1024 / 1024
 print "Totaal vrije ruimte",round(r15a,2), " GB"
+
+r16 = float(client.get_value(number=16).resultaat)
+r16a= r16 / 60 / 60 / 24
+print "totale uptime in dagen:", round(r16a,2)
