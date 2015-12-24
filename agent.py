@@ -64,7 +64,7 @@ def get_value(number):
     if number == 14:
         return socket.gethostbyname(socket.gethostname())
     if number == 15:
-        return psutil.disk_usage()
+        return psutil.disk_usage('C:\\')
     # Last value
     return None
     # Last value
