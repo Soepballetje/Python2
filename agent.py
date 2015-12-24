@@ -9,8 +9,8 @@ c:\\P2\App\python.exe c:\scripts\agent.py
 from pysimplesoap.server import SoapDispatcher, SOAPHandler
 from BaseHTTPServer import HTTPServer
 import sys,subprocess
-import  psutil
-
+import psutil
+import socket
 # ---------------------------------------------------------
 
 # List of all your agent functions that can be called from within the management script.
@@ -37,7 +37,7 @@ def get_value(number):
     # Exporting with export-csv and reading the CSV using Python is also possible of course.
     if number == 4:
         p = subprocess.Popen(['powershell.exe',           # Atlijd gelijk of volledig pad naar powershell.exe
-            '-ExecutionPolicy', 'Unrestricted',           # Override current Execution Policy
+            '-ExecutionPolicy', 'bypass',           # Override current Execution Policy
             'C:\\Python\\Python2\\agent_counters.ps1'],   # Naam van en pad naar je PowerShell script
             stdout=subprocess.PIPE)                       # Zorg ervoor dat je de STDOUT kan opvragen.
         output = p.stdout.read()                          # De stdout
@@ -61,7 +61,10 @@ def get_value(number):
         return psutil.virtual_memory().used
     if number == 13:
         return psutil.virtual_memory().total
-
+    if number == 14:
+        return socket.gethostbyname(socket.gethostname())
+    if number == 15:
+        return psutil.disk_usage()
     # Last value
     return None
     # Last value
