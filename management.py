@@ -104,6 +104,6 @@ except:
     print "Agent didn't uptime because:"
 
 print(Lists)
-resultFile = open("output.csv",'wb')
+resultFile = open("output.csv", 'wb')
 wr = csv.writer(resultFile, dialect='excel')
 wr.writerows(Lists)
