@@ -1,6 +1,6 @@
 from pysimplesoap.client import SoapClient, SoapFault
 import csv
-import time
+from time import strftime
 
 # create a simple consumer
 client = SoapClient(
@@ -11,8 +11,7 @@ client = SoapClient(
     ns=False)
 
 # call a few remote methods
-Lists = [[] for i in range(13)]
-
+Lists = [[] for i in range(20)]
 try:
     r1 = str(client.get_value(number=1).resultaat)
     print "Het platform is: ", r1
@@ -103,7 +102,14 @@ try:
 except:
     print "Agent didn't uptime because:"
 
-print(Lists)
-resultFile = open("output.csv", 'wb')
-wr = csv.writer(resultFile, dialect='excel')
-wr.writerows(Lists)
+try:
+    r17 = str(client.get_value(number=17).resultaat)
+    print "Hostname node is:", r17
+    Lists[13].append(r17)
+except:
+    print "Agent didn't send hostname because:"
+
+Time = strftime("%Y-%m-%d %H:%M:%S"), r17, r1, r2, r3, r4, r5, r6, r10, r11, r12, r13, r14, r15, r16
+with open(r17+".csv", 'wb') as resultFile:
+    wr = csv.writer(resultFile, dialect='excel')
+    wr.writerow(Time)

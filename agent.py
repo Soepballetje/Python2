@@ -69,6 +69,8 @@ def get_value(number):
         return psutil.disk_usage('C:\\').free
     if number == 16:
         return uptime()
+    if number == 17:
+        return socket.gethostname()
     # Last value
     return None
 
