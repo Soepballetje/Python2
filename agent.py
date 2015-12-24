@@ -14,6 +14,7 @@ import socket
 from uptime import uptime
 # ---------------------------------------------------------
 
+
 # List of all your agent functions that can be called from within the management script.
 # A real developer should do this differently, but this is more easy.
 def get_value(number):
@@ -37,11 +38,11 @@ def get_value(number):
     # Example in which a PowerShell script is used. The STDOUT is used to pass results back to python.
     # Exporting with export-csv and reading the CSV using Python is also possible of course.
     if number == 4:
-        p = subprocess.Popen(['powershell.exe',           # Atlijd gelijk of volledig pad naar powershell.exe
-            '-ExecutionPolicy', 'bypass',           # Override current Execution Policy
-            'C:\\Python\\Python2\\agent_counters.ps1'],   # Naam van en pad naar je PowerShell script
-            stdout=subprocess.PIPE)                       # Zorg ervoor dat je de STDOUT kan opvragen.
-        output = p.stdout.read()                          # De stdout
+        p = subprocess.Popen(['powershell.exe',                # Atlijd gelijk of volledig pad naar powershell.exe
+            '-ExecutionPolicy', 'bypass',                      # Override current Execution Policy
+            'C:\Users\Ward Bakker\PycharmProjects\Python3\agent_counters.ps1'],   # Naam van en pad naar je PowerShell script
+            stdout=subprocess.PIPE)                            # Zorg ervoor dat je de STDOUT kan opvragen.
+        output = p.stdout.read()                               # De stdout
         return output
 
     # Example of sing a PowerShell oneliner. Useful for simple PowerShell commands.
@@ -68,8 +69,6 @@ def get_value(number):
         return psutil.disk_usage('C:\\').free
     if number == 16:
         return uptime()
-    # Last value
-    return None
     # Last value
     return None
 
