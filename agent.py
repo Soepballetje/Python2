@@ -11,7 +11,9 @@ from BaseHTTPServer import HTTPServer
 import sys,subprocess
 import psutil
 import socket
+from uptime import uptime
 # ---------------------------------------------------------
+
 
 # List of all your agent functions that can be called from within the management script.
 # A real developer should do this differently, but this is more easy.
@@ -65,8 +67,8 @@ def get_value(number):
         return socket.gethostbyname(socket.gethostname())
     if number == 15:
         return psutil.disk_usage('C:\\').free
-    # Last value
-    return None
+    if number == 16:
+        return uptime()
     # Last value
     return None
 
