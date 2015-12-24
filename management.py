@@ -3,7 +3,7 @@ from pysimplesoap.client import SoapClient, SoapFault
 # create a simple consumer
 client = SoapClient(
     location = "http://localhost:8008/",
-    action = 'http://localhost:8008/', # SOAPAction
+    action = 'http://localhost:8008/',  # SOAPAction
     namespace = "http://example.com/sample.wsdl",
     soap_ns='soap',
     ns = False)
