@@ -4,11 +4,11 @@ import time
 
 # create a simple consumer
 client = SoapClient(
-    location = "http://localhost:8008/",
-    action = 'http://localhost:8008/',  # SOAPAction
-    namespace = "http://example.com/sample.wsdl",
+    location="http://localhost:8008/",
+    action='http://localhost:8008/',  # SOAPAction
+    namespace="http://example.com/sample.wsdl",
     soap_ns='soap',
-    ns = False)
+    ns=False)
 
 # call a few remote methods
 Lists = [[] for i in range(13)]
