@@ -67,8 +67,6 @@ def get_value(number):
         return psutil.disk_usage('C:\\').free
     # Last value
     return None
-    # Last value
-    return None
 
 
 
