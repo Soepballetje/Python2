@@ -102,6 +102,6 @@ except:
 Time = strftime("%Y-%m-%d %H:%M:%S"), r17, r1, r2, r3, r4, r5, r6, r10, r11, r12, r13, r14, r15, r16
 with open(r17+".csv", 'wb') as resultFile:
     wr = csv.writer(resultFile, dialect='excel')
-    wr.writerow(["Time", "hostname", "Platfrom", "encoding", "resultaat", "Processen", "services", "CPU Usage", "RAM %",
+    wr.writerow(["Time", "Hostname", "Platfrom", "encoding", "resultaat", "Processen", "services", "CPU Usage", "RAM %",
                  "RAM Geheugen Vrij", "RAM gebeugen Usage", "RAM totaal", "IP", "HDD ruimte", "System Uptime"])
     wr.writerow(Time)
