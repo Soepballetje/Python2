@@ -1,5 +1,5 @@
 #!C:\Python27\python.exe
-import cgi, cgitb, test
+import cgi, cgitb
 print "content-Type: text/html\n"
 cgitb.enable()
 
