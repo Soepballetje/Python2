@@ -8,7 +8,7 @@ c:\\P2\App\python.exe c:\scripts\agent.py
 
 from pysimplesoap.server import SoapDispatcher, SOAPHandler
 from BaseHTTPServer import HTTPServer
-import sys,subprocess
+import sys, subprocess
 import psutil
 import socket
 from uptime import uptime
@@ -73,10 +73,6 @@ def get_value(number):
         return socket.gethostname()
     # Last value
     return None
-
-
-
-
 
 # ---------------------------------------------------------
 
