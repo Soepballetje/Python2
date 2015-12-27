@@ -1,12 +1,17 @@
 from pysimplesoap.client import SoapClient
 import csv
 from time import strftime
+from lxml import etree
+import os
+
 
 hostlist = []
 
 data = 'host1.xml'
 xmldata = etree.parse(data)
 host= xmldata.xpath('/groep/host/ip/text()')
+
+# hgfhfghfgh
 
 for i in host:
     print i
