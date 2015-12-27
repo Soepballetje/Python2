@@ -144,5 +144,3 @@ for i in host:
         pass
 
 # call a few remote methods
-
-
