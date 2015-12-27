@@ -19,7 +19,7 @@ from uptime import uptime
 # A real developer should do this differently, but this is more easy.
 def get_value(number):
     "return the result of one of the pre-define numbers"
-    print "get_value, of of item with number=",number
+    print "get_value, of of item with number=", number
 
     # An example of a value that is acquired using Python only.
     # returns a string
