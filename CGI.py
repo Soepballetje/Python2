@@ -1,7 +1,9 @@
-#!C:/Python27/python.exe
-import cgi,cgitb,management
+#!C:\Python27\python.exe
+import cgi, cgitb, test
 print "content-Type: text/html\n"
 cgitb.enable()
+
+form = cgi.FieldStorage()
 
 print "<!DOCTYPE html>"
 print '<html lang="en">'
@@ -37,7 +39,26 @@ print '</div>'
 print '</div>'
 print '</nav>'
 print '<div>'
-print '<h2>Dit is een test</h2>'
+print '<TABLE BORDER="1">'
+print '<TR><TD>Time</TD>'
+print '<TD>Hostname:</TD>'
+print '<TD>Platform:</TD>'
+print '<TD>Encoding:</TD>'
+print '<TD>Resultaat:</TD>'
+print '<TD>Processen:</TD>'
+print '<TD>Services:</TD>'
+print '<TD>CPU Usage:</TD>'
+print '<TD>RAM Usage:</TD>'
+print '<TD>Vrije RAM:</TD>'
+print '<TD>RAM in Gebruik:</TD>'
+print '<TD>RAM totaal:</TD>'
+print '<TD>IP:</TD>'
+print '<TD>HDD ruimte:</TD>'
+print '<TD>Sys uptime:</TD></TR>'
+print '<TR> <TD>' '</TD></TR>'
+print '</TABLE>'
+
+print '</div>'
 print '</body>'
 print '</html>'
 

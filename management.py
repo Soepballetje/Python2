@@ -102,15 +102,11 @@ def uitvragen(client):
                      "RAM Geheugen Vrij", "RAM gebeugen Usage", "RAM totaal", "IP", "HDD ruimte", "System Uptime"])
         wr.writerow(Time)
 
-
-
 hostlist = []
 
 data = 'host.xml'
 xmldata = etree.parse(data)
 host = xmldata.xpath('/groep/host/ip/text()')
-
-
 
 for i in host:
     hostname = i
@@ -126,11 +122,8 @@ for i in host:
             uitvragen(client)
         else:
             print "host down"
-
-
     except:
         pass
-
 
 # call a few remote methods
 
