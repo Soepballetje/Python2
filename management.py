@@ -72,7 +72,6 @@ def uitvragen(client,ServerIP):
         print "Geheugen in gebruik:", round(r12, 2), "GB"
         Lists[8].append(r12)
 
-
     r13 = float(client.get_value(number=13).resultaat) / 1024 / 1024 / 1024
     if not r13:
         logging.error("r13 heeft geen resultaat kunnen uitvragen het volgende adres:"+ ServerIP)
