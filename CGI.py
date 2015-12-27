@@ -2,8 +2,6 @@ import cgi,cgitb,management
 
 cgitb.enable()
 
-
-
 print("<!DOCTYPE html>")
 print('<html lang="en">')
 print("<head>")
@@ -38,7 +36,7 @@ print('</div>')
 print('</div>')
 print('</nav>')
 print('<div>')
-print('<h2>Dit is een test</h2>') %
+print '<h2>Dit is een test</h2>' % management.r17
 print('</body>')
 print('</html>')
 
