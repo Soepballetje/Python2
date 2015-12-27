@@ -51,13 +51,13 @@ try:
 except:
     print("Agent didn't send cpu utilization because:")
 try:
-    r11=float(client.get_value(number=11).resultaat) / 1024 / 1024 / 1024
+    r11 = float(client.get_value(number=11).resultaat) / 1024 / 1024 / 1024
     print "Geheugen vrij:", round(r11,2), "GB"
     Lists[7].append(r11)
 except:
     print("Agent didn't free hdd space because:")
 try:
-    r12=float(client.get_value(number=12).resultaat) / 1024 / 1024 / 1024
+    r12 = float(client.get_value(number=12).resultaat) / 1024 / 1024 / 1024
     print "Geheugen in gebruik:", round(r12, 2), "GB"
     Lists[8].append(r12)
 except:
