@@ -5,16 +5,15 @@ Open the firewall if needed and start this agent:
 <cmd>
 c:\\P2\App\python.exe c:\scripts\agent.py
 """
-
 from pysimplesoap.server import SoapDispatcher, SOAPHandler
 from BaseHTTPServer import HTTPServer
 import sys, subprocess
 import psutil
 import socket
 from uptime import uptime
+
+
 # ---------------------------------------------------------
-
-
 # List of all your agent functions that can be called from within the management script.
 # A real developer should do this differently, but this is more easy.
 def get_value(number):
@@ -75,7 +74,6 @@ def get_value(number):
     return None
 
 # ---------------------------------------------------------
-
 # do not change anything unless you know what you're doing.
 port = 8008
 dispatcher = SoapDispatcher(
@@ -97,4 +95,3 @@ print "Starting server on port",port,"..."
 httpd = HTTPServer(("", port), SOAPHandler)
 httpd.dispatcher = dispatcher
 httpd.serve_forever()
-

@@ -5,6 +5,7 @@ from lxml import etree
 import os
 import logging
 
+
 def uitvragen(client):
     Lists = [[] for i in range(20)]
     try:
