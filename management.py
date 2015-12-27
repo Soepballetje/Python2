@@ -2,9 +2,20 @@ from pysimplesoap.client import SoapClient
 import csv
 from time import strftime
 
-# create a simple consumer
-client = SoapClient(location="http://localhost:8008/", action='http://localhost:8008/',
-                    namespace="http://example.com/sample.wsdl", soap_ns='soap', ns=False)  # SOAPACTION
+hostlist = []
+
+data = 'host1.xml'
+xmldata = etree.parse(data)
+host= xmldata.xpath('/groep/host/ip/text()')
+
+for i in host:
+    print i
+    client = SoapClient(
+        location = 'http://'+i+':8008/',
+        action = 'http://localhost:8008/', # SOAPAction
+        namespace = "http://example.com/sample.wsdl",
+        soap_ns='soap',
+        ns = False)
 
 # call a few remote methods
 Lists = [[] for i in range(20)]
