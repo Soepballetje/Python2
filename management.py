@@ -3,12 +3,8 @@ import csv
 from time import strftime
 
 # create a simple consumer
-client = SoapClient(
-    location="http://localhost:8008/",
-    action='http://localhost:8008/',  # SOAPAction
-    namespace="http://example.com/sample.wsdl",
-    soap_ns='soap',
-    ns=False)
+client = SoapClient(location="http://localhost:8008/", action='http://localhost:8008/',
+                    namespace="http://example.com/sample.wsdl", soap_ns='soap', ns=False)  # SOAPACTION
 
 # call a few remote methods
 Lists = [[] for i in range(20)]
@@ -26,7 +22,7 @@ except:
     print("Agent didn't send encoding specifications because:")
 try:
     r3=str(client.get_value(number=3).resultaat)
-    print "Resultaat number=3:", int(r3) # r3 is a number!
+    print "Resultaat number=3:", int(r3)  # r3 is a number!
     Lists[2].append(r3)
 except:
     print("Agent didn't send number because:")
@@ -56,13 +52,13 @@ except:
     print("Agent didn't send cpu utilization because:")
 try:
     r11=float(client.get_value(number=11).resultaat) / 1024 / 1024 / 1024
-    print "Geheugen vrij:",round(r11,2), "GB"
+    print "Geheugen vrij:", round(r11,2), "GB"
     Lists[7].append(r11)
 except:
     print("Agent didn't free hdd space because:")
 try:
     r12=float(client.get_value(number=12).resultaat) / 1024 / 1024 / 1024
-    print "Geheugen in gebruik:",round(r12, 2), "GB"
+    print "Geheugen in gebruik:", round(r12, 2), "GB"
     Lists[8].append(r12)
 except:
     print "Agent didn't occupied space because:"
