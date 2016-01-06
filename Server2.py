@@ -22,7 +22,7 @@ print "<body>"
 print '<nav class="navbar navbar-inverse">'
 print '<div class="container-fluid">'
 print '<div class="navbar-header">'
-print '<a href="Server.py" class="navbar-brand">Server 2</a>'
+print '<a href="Server2.py" class="navbar-brand">Server 2</a>'
 print '</div>'
 print '<div>'
 print '<ul class="nav navbar-nav">'
