@@ -33,7 +33,23 @@
         </div>
     </nav>
 
+<?php
 
+echo "<html><body><table>\n\n";
+$f = fopen("C:\Python\Python2\ComputerB.csv", "r");
+while (($line = fgetcsv($f)) !== false) {
+        echo "<tr>";
+        foreach ($line as $cell) {
+                echo "<td>" . htmlspecialchars($cell) . "</td>";
+        }
+        echo "</tr>\n";
+}
+fclose($f);
+echo "\n</table></body></html>";
+
+exec("C:\Python27\Python.exe C:\Python\management.py");
+
+?>
 
 </body>
 </html>

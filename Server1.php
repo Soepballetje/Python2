@@ -14,7 +14,7 @@
     border: 1px solid black;
     padding: 5px
     }
-</style>s
+</style>
 
 </head>
 <body>
@@ -44,7 +44,7 @@
 <?php
 
 echo "<html><body><table>\n\n";
-$f = fopen("C:\Python\Python2\Roadrunner.csv", "r");
+$f = fopen("C:\Python\Python2\ComputerA.csv", "r");
 while (($line = fgetcsv($f)) !== false) {
         echo "<tr>";
         foreach ($line as $cell) {
@@ -55,7 +55,7 @@ while (($line = fgetcsv($f)) !== false) {
 fclose($f);
 echo "\n</table></body></html>";
 
-$pid = popen ($command,"r");
+exec("C:\Python27\Python.exe C:\Python\management.py");
 
 ?>
 </body>
