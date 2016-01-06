@@ -109,7 +109,7 @@ def uitvragen(client,ServerIP):
     if not 16:
         logging.error("r16 heeft geen resultaat kunnen uitvragen het volgende adres:"+ ServerIP)
     else:
-        print "De uptime van dit systeem betreft:", round(r16, 2)
+        print "De uptime van dit systeem betreft:", round(r16, 2),"uur"
         Lists[12].append(r16)
 
 
