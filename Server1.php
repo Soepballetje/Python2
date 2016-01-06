@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -29,5 +34,21 @@
             </div>
         </div>
     </nav>
+<?php
+
+echo "<html><body><table border="1">\n\n";
+$f = fopen("C:\Users\Ward Bakker\PycharmProjects\Python1\Desktop-Ward.csv", "r");
+while (($line = fgetcsv($f)) !== false) {
+        echo "<tr>";
+        foreach ($line as $cell) {
+                echo "<td>" . htmlspecialchars($cell) . "</td>";
+        }
+        echo "</tr>\n";
+}
+fclose($f);
+echo "\n</table></body></html>";
+
+?>
+
 </body>
 </html>
