@@ -3,10 +3,7 @@ import cgi, cgitb
 import csv
 print "content-Type: text/html\n"
 cgitb.enable()
-
 form = cgi.FieldStorage()
-
-
 
 print "<!DOCTYPE html>"
 print '<html lang="en">'
