@@ -40,7 +40,7 @@ def get_value(number):
     if number == 4:
         p = subprocess.Popen(['powershell.exe',                # Atlijd gelijk of volledig pad naar powershell.exe
             '-ExecutionPolicy', 'bypass',                      # Override current Execution Policy
-            "C:\Users\Ward Bakker\PycharmProjects\Python1\agent_counters.ps1"],   # Naam van en pad naar je PowerShell script
+            "C:\\Python\\Python2\\agent_counters.ps1"],   # Naam van en pad naar je PowerShell script
             stdout=subprocess.PIPE)                            # Zorg ervoor dat je de STDOUT kan opvragen.
         output = p.stdout.read()                               # De stdout
         return output
@@ -66,7 +66,7 @@ def get_value(number):
     if number == 14:
         return socket.gethostbyname(socket.gethostname())
     if number == 15:
-        return psutil.disk_usage('C:\\').free
+            return psutil.disk_usage('C:\\').free
     if number == 16:
         return uptime()
     if number == 17:
