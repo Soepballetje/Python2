@@ -139,7 +139,7 @@ def uitvragen(client,ServerIP):
 
 logging.basicConfig(filename = 'Python.log', level = logging.ERROR)
 
-data = 'host.xml'
+data = 'host1.xml'
 xmldata = etree.parse(data)
 host= xmldata.xpath('/groep/host/ip/text()')
 
