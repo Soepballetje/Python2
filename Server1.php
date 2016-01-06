@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="refresh" content="5" />
     <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,6 +54,8 @@ while (($line = fgetcsv($f)) !== false) {
 }
 fclose($f);
 echo "\n</table></body></html>";
+
+$pid = popen ($command,"r");
 
 ?>
 </body>
