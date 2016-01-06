@@ -11,7 +11,7 @@ form = cgi.FieldStorage()
 print "<!DOCTYPE html>"
 print '<html lang="en">'
 print "<head>"
-print "<title>Server 1</title>"
+print "<title>Server 2</title>"
 print '<meta charset="utf-8">'
 print '<meta name="viewport" content="width=device-width, initial-scale=1">'
 print '<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">'
@@ -22,12 +22,12 @@ print "<body>"
 print '<nav class="navbar navbar-inverse">'
 print '<div class="container-fluid">'
 print '<div class="navbar-header">'
-print '<a href="Server1.py" class="navbar-brand">Server 1</a>'
+print '<a href="Server2.py" class="navbar-brand">Server 2</a>'
 print '</div>'
 print '<div>'
 print '<ul class="nav navbar-nav">'
 print '<li class="active"><a href="#">Home</a></li>'
-print '<li><a href="Server2.html">Server 2</a></li>'
+print '<li><a href="Server1.html">Server 1</a></li>'
 print '<li><a href="Server3.html">Server 3</a></li>'
 print '</ul>'
 print '</li>'
