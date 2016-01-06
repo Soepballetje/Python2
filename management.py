@@ -141,7 +141,7 @@ logging.basicConfig(filename = 'Python.log', level = logging.ERROR)
 
 data = 'host1.xml'
 xmldata = etree.parse(data)
-host= xmldata.xpath('/groep/host/ip/text()')
+host = xmldata.xpath('/groep/host/ip/text()')
 
 
 
