@@ -1,6 +1,5 @@
 #!C:\Python27\python.exe
 import cgi, cgitb
-import csv
 print "content-Type: text/html\n"
 cgitb.enable()
 form = cgi.FieldStorage()

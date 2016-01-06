@@ -6,8 +6,6 @@ cgitb.enable()
 
 form = cgi.FieldStorage()
 
-
-
 print "<!DOCTYPE html>"
 print '<html lang="en">'
 print "<head>"
