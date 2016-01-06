@@ -26,7 +26,7 @@ def uitvragen(client,ServerIP):
     if not r3:
         logging.error("r3 heeft geen resultaat kunnen uitvragen het volgende adres:"+ ServerIP)
     else:
-        print "Resultaat number= :", int(r3)  # r3 is a number!
+        print "Resultaat nummer= :", int(r3)  # r3 is a number!
         Lists[2].append(r3)
 
     r4 = str(client.get_value(number=4).resultaat)
@@ -97,7 +97,7 @@ def uitvragen(client,ServerIP):
     if not 16:
         logging.error("r16 heeft geen resultaat kunnen uitvragen het volgende adres:"+ ServerIP)
     else:
-        print "De uptime van dit systeem betreft:", round(r16, 2)
+        print "De uptime van dit systeem betreft:", round(r16, 2),"uur"
         Lists[12].append(r16)
 
     r17 = str(client.get_value(number=17).resultaat)
