@@ -126,7 +126,7 @@ def uitvragen(client,ServerIP):
     if not os.path.isfile("C:\\Python\\"+r17+".csv"):
         csvbestand = open(r17+".csv", 'wb')
         wr = csv.writer(csvbestand, dialect='excel', lineterminator ='\n')
-        wr.writerow(["Time", "Hostname", "Platfrom", "Encoding", "Resultaat", "Processen", "Services", "CPU Usage", "RAM %",
+        wr.writerow(["Time", "Hostname", "Platform", "Encoding", "Resultaat", "Processen", "Services", "CPU Usage", "RAM %",
                      "RAM Geheugen Vrij", "RAM gebeugen Usage", "RAM totaal", "IP", "HDD ruimte", "System Uptime"])
         wr.writerow(Time)
     else:
