@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <groep>Computers
         <host> computer A
-            <ip>192.168.2.16</ip>
+            <ip>192.168.1.100</ip>
         </host>
 
 

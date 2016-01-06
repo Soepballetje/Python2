@@ -1,8 +1,12 @@
 #!C:\Python27\python.exe
 import cgi, cgitb
+import csv
 print "content-Type: text/html\n"
 cgitb.enable()
+
 form = cgi.FieldStorage()
+
+
 
 print "<!DOCTYPE html>"
 print '<html lang="en">'
@@ -23,9 +27,9 @@ print '</div>'
 print '<div>'
 print '<ul class="nav navbar-nav">'
 print '<li class="active"><a href="#">Home</a></li>'
-print '<li><a href="Server1.py">Server 1</a></li>'
-print '<li><a href="Server2.py">Server 2</a></li>'
-print '<li><a href="Server3.py">Server 3</a></li>'
+print '<li><a href="Server1.php">Server 1</a></li>'
+print '<li><a href="Server2.php">Server 2</a></li>'
+print '<li><a href="Server3.php">Server 3</a></li>'
 print '</ul>'
 print '</li>'
 print '</ul>'
