@@ -1,9 +1,9 @@
 #!C:\Python27\python.exe
-import cgi, cgitb
+import cgi, cgitb, csv
 print "content-Type: text/html\n"
 cgitb.enable()
 
-form = cgi.FieldStorage()
+f = open('C:\\Users\\Ward Bakker\\PycharmProjects\\Python1\\DESKTOP-Ward.csv')
 
 print "<!DOCTYPE html>"
 print '<html lang="en">'
@@ -14,6 +14,10 @@ print '<meta name="viewport" content="width=device-width, initial-scale=1">'
 print '<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">'
 print '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>'
 print '<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>'
+print '<style>'
+print 'table, th, td {'\
+      'border: 2px solid black;}'\
+      '</style>'
 print "</head>"
 print "<body>"
 print '<nav class="navbar navbar-inverse">'
@@ -39,25 +43,25 @@ print '</div>'
 print '</div>'
 print '</nav>'
 print '<div>'
-print '<TABLE BORDER="1">'
-print '<TR><TD>Time</TD>'
-print '<TD>Hostname:</TD>'
-print '<TD>Platform:</TD>'
-print '<TD>Encoding:</TD>'
-print '<TD>Resultaat:</TD>'
-print '<TD>Processen:</TD>'
-print '<TD>Services:</TD>'
-print '<TD>CPU Usage:</TD>'
-print '<TD>RAM Usage:</TD>'
-print '<TD>Vrije RAM:</TD>'
-print '<TD>RAM in Gebruik:</TD>'
-print '<TD>RAM totaal:</TD>'
-print '<TD>IP:</TD>'
-print '<TD>HDD ruimte:</TD>'
-print '<TD>Sys uptime:</TD></TR>'
-print '<TR> <TD>' '</TD></TR>'
-print '</TABLE>'
-
+print '<table>'
+print '<tr>'
+print '<th>Time</th>'
+print '<th>Hostname</th>'
+print '<th>Platfrom</th>'
+print '<th>Encoding</th>'
+print '<th>Resultaat</th>'
+print '<th>Processen</th>'
+print '<th>Services</th>'
+print '<th>RAM %</th>'
+print '<th>RAM Geheugen Vrij</th>'
+print '<th>RAM gebeugen Usage</th>'
+print '<th>RAM totaal</th>'
+print '<th>IP</th>'
+print '<th>HDD ruimte</th>'
+print '<th>System Uptime</th>'
+print '</tr>'
+print '<tr>'
+print '</table>'
 print '</div>'
 print '</body>'
 print '</html>'

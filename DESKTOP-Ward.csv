@@ -1,3 +1,3 @@
-Time,hostname,Platfrom,encoding,resultaat,Processen,services,CPU Usage,RAM %,RAM Geheugen Vrij,RAM gebeugen Usage,RAM totaal,IP,HDD ruimte,System Uptime
-2015-12-24 19:12:38,DESKTOP-Ward,win32,ascii,8888,,"229
-",14.5,50.3,3.945953369140625,3.9994430541992188,7.945316314697266,192.168.2.16,55.971923828125,5.014214166666666
+Time,Hostname,Platfrom,Encoding,Resultaat,Processen,Services,CPU Usage,RAM %,RAM Geheugen Vrij,RAM gebeugen Usage,RAM totaal,IP,HDD ruimte,System Uptime
+2016-01-06 15:01:07,DESKTOP-Ward,win32,ascii,8888,,"227
+",22.2,32.2,10.820640563964844,5.124687194824219,15.945316314697266,192.168.2.16,61.59056854248047,147.79778638888885

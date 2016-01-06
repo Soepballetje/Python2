@@ -5,6 +5,7 @@ from lxml import etree
 import os
 import logging
 
+
 def uitvragen(client,ServerIP):
     Lists = [[] for i in range(20)]
 
@@ -116,14 +117,15 @@ def uitvragen(client,ServerIP):
         wr.writerow(Time)
     else:
         kaas = open(r17+".csv", 'a')
-        wr = csv.writer(kaas, dialect='excel', lineterminator ='\n')
+        wr = csv.writer(kaas, dialect='excel', lineterminator='\n')
         wr.writerow(Time)
 
-logging.basicConfig(filename = 'Python.log', level = logging.ERROR)
+logging.basicConfig(filename='Python.log', level=logging.ERROR)
 
 data = 'host1.xml'
 xmldata = etree.parse(data)
 host = xmldata.xpath('/groep/host/ip/text()')
+
 
 for i in host:
     hostname = i

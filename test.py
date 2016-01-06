@@ -1,39 +1,52 @@
-import matplotlib.pyplot as plt
-import numpy as np
+import xlrd
 import csv
+import sys
 
-filename = open('DESKTOP-Ward.csv', 'rb')
-mycsv = csv.reader(filename)
-mycsv = list(mycsv)
+# write from xls file to csv file
+# wb = xlrd.open_workbook('test.xls')
+# sh = wb.sheet_by_name('Sheet1')
+your_csv_file = open('Desktop-Ward.csv', 'wb')
+wr = csv.writer(your_csv_file, quoting=csv.QUOTE_ALL)
 
-time = mycsv[0][0]
-hostname = mycsv[1][1]
-Platfrom = mycsv[0][2]
-encoding = mycsv[0][3]
-resultaat = mycsv[0][4]
-Processen = mycsv[0][5]
-services = mycsv[0][6]
-CPU_Usage = mycsv[0][7]
-RAM_P = mycsv[0][8]
-RAM_Geheugen_Vrij = mycsv[0][9]
-RAM_gebeugen_Usage = mycsv[0][10]
-RAM_totaal = mycsv[0][11]
-IP = mycsv[0][12]
-System_Uptime = mycsv[0][13]
-print hostname
+# for rownum in xrange(sh.nrows):
+#     wr.writerow(sh.row_values(rownum))
 
-# fig = plt.figure()
-# fig.subplots_adjust(top=0.8)
-# ax1 = fig.add_subplot(211)
-# ax1.set_ylabel('volts')
-# ax1.set_title('a sine wave')
-#
-# t = np.arange(0.0, 1.0, 0.01)
-# s = np.sin(2*np.pi*t)
-# line, = ax1.plot(t, s, color='blue', lw=2)
-#
-# ax2 = fig.add_axes([0.15, 0.1, 0.7, 0.3])
-# n, bins, patches = ax2.hist(np.random.randn(1000), 50,
-#     facecolor='yellow', edgecolor='yellow')
-# ax2.set_xlabel('time (s)')
-# fig.savefig('foo.png', dpi=200)
+your_csv_file.close()
+print "Converted from xls to csv!"
+# write from csv file to html
+
+# if len(sys.argv) < 3:
+#   print "Usage: csvToTable.py csv_file html_file"
+#   exit(1)
+
+# Open the CSV file for reading
+reader = csv.reader(open("Desktop-Ward.csv"))
+
+# Create the HTML file for output
+htmlfile = open("data.html","w+")
+
+# initialize rownum variable
+rownum = 0
+
+# generate table contents
+for row in reader: # Read a single row from the CSV file
+    for line in htmlfile:
+        # this HTML comment is found in the HTML file where I want to insert the table
+        if line == "<!-- Table starts here !-->":
+            # write <table> tag
+            htmlfile.write('<table>')
+            htmlfile.write('<tr>') # write <tr> tag
+            for column in row:
+                htmlfile.write('<th>' + column + '</th>')
+            htmlfile.write('</tr>')
+            # write </table> tag
+            htmlfile.write('</table>')
+
+        #increment row count
+        rownum += 1
+
+
+
+# print results to shell
+print "Created " + str(rownum) + " row table."
+exit(0)
