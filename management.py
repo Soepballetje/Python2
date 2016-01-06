@@ -28,7 +28,7 @@ def uitvragen(client,ServerIP):
     if not r3:
         logging.error("r3 heeft geen resultaat kunnen uitvragen het volgende adres:"+ ServerIP)
     else:
-        print "Resultaat number= :", int(r3)  # r3 is a number!
+        print "Resultaat nummer= :", int(r3)  # r3 is a number!
         Lists[2].append(r3)
 
 
