@@ -6,7 +6,10 @@ cgitb.enable()
 
 form = cgi.FieldStorage()
 
-
+with open('names.csv') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+    print(row['first_name'], row['last_name'])
 
 print "<!DOCTYPE html>"
 print '<html lang="en">'
