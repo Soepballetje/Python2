@@ -1,52 +1,27 @@
-import xlrd
-import csv
-import sys
+import numpy, scipy, pylab, random
 
-# write from xls file to csv file
-# wb = xlrd.open_workbook('test.xls')
-# sh = wb.sheet_by_name('Sheet1')
-your_csv_file = open('Desktop-Ward.csv', 'wb')
-wr = csv.writer(your_csv_file, quoting=csv.QUOTE_ALL)
+xs = []
+rawsignal = []
+with open("test.dat", 'r') as f:
+      for line in f:
+            if line[0] != '#' and len(line) > 0:
+                xs.append( int( line.split()[0] ) )
+                rawsignal.append( int( line.split()[1] ) )
 
-# for rownum in xrange(sh.nrows):
-#     wr.writerow(sh.row_values(rownum))
+h, w = 3, 1
+pylab.figure(figsize=(12,9))
+pylab.subplots_adjust(hspace=.7)
 
-your_csv_file.close()
-print "Converted from xls to csv!"
-# write from csv file to html
+pylab.subplot(h,w,1)
+pylab.title("Signal")
+pylab.plot(xs,rawsignal)
 
-# if len(sys.argv) < 3:
-#   print "Usage: csvToTable.py csv_file html_file"
-#   exit(1)
-
-# Open the CSV file for reading
-reader = csv.reader(open("Desktop-Ward.csv"))
-
-# Create the HTML file for output
-htmlfile = open("data.html","w+")
-
-# initialize rownum variable
-rownum = 0
-
-# generate table contents
-for row in reader: # Read a single row from the CSV file
-    for line in htmlfile:
-        # this HTML comment is found in the HTML file where I want to insert the table
-        if line == "<!-- Table starts here !-->":
-            # write <table> tag
-            htmlfile.write('<table>')
-            htmlfile.write('<tr>') # write <tr> tag
-            for column in row:
-                htmlfile.write('<th>' + column + '</th>')
-            htmlfile.write('</tr>')
-            # write </table> tag
-            htmlfile.write('</table>')
-
-        #increment row count
-        rownum += 1
+pylab.subplot(h,w,2)
+pylab.title("FFT")
+fft = scipy.fft(rawsignal)
+#~ pylab.axis([None,None,0,1000])
+pylab.ylim([0,1000])
+pylab.plot(abs(fft))
 
 
-
-# print results to shell
-print "Created " + str(rownum) + " row table."
-exit(0)
+pylab.show()
