@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="refresh" content="60" />
     <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="refresh" content="5" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <style>
-        table, th, td {
-        border: 1px solid black;
-		padding: 5px;
-		border-collapse: collapse;
-        }
-    </style>
+
+<style>
+    table, th, td {
+    border: 1px solid black;
+    padding: 5px
+    }
+</style>
+
 </head>
 <body>
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
 
@@ -29,18 +31,22 @@
             <div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="Server1.html">Server 1</a></li>
-                    <li><a href="Server2.html">Server 2</a></li>
-                    <li><a href="Server3.html">Server 3</a></li>
+                    <!-- drop down menu -->
+                            <li><a href="server1.html">Server 1</a></li>
+                            <li><a href="Server2.html">Server 2</a></li>
+                            <li><a href="Server3.html">Server 3</a></li>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+<div class = "container">
+    <img src = "CPUComputerA.png" width = "480" height = "480"><img src = "RAMComputerA.png" width = "480" height = "480">
+</div>
 <?php
 
-echo "<html><body><table border=1px, align= center, width: 50%;>\n\n";
-$f = fopen("C:\Users\Ward Bakker\PycharmProjects\Python1\Desktop-Ward.csv", "r");
+echo "<html><body><table>\n\n";
+$f = fopen("C:\inetpub\wwwroot\ComputerA.csv", "r");
 while (($line = fgetcsv($f)) !== false) {
         echo "<tr>";
         foreach ($line as $cell) {
@@ -51,7 +57,7 @@ while (($line = fgetcsv($f)) !== false) {
 fclose($f);
 echo "\n</table></body></html>";
 
-?>
 
+?>
 </body>
 </html>

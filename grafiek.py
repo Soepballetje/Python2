@@ -27,4 +27,3 @@ plt.ylabel('Percentage %')
 plt.legend()
 
 plt.savefig('ram.png')
-plt.show()
