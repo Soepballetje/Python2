@@ -109,7 +109,6 @@ def uitvragen(client,ServerIP):
         Lists[13].append(r17)
 
     f = open(r17+'.csv', 'r')
-
     countrdr = csv.DictReader(f)
     totalrows = 1
     for row in countrdr:
