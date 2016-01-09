@@ -5,6 +5,7 @@ from lxml import etree
 import os
 import logging
 
+
 def uitvragen(client,ServerIP):
     Lists = [[] for i in range(20)]
 
@@ -120,13 +121,12 @@ def uitvragen(client,ServerIP):
     else:
         print "Hostname node is:", r17
         Lists[13].append(r17)
-
     Datum = strftime("%Y-%m-%d")
     Time = strftime("%H:%M:%S"), Datum, r17, r1, r2, r3, r4, r5, r6, r10, r11, r12, r13, r14, r15, r16
     if not os.path.isfile("C:\\Python\\Python2\\"+r17+".csv"):
         csvbestand = open("C:\\Python\\Python2\\"+r17+".csv", 'wb')
         wr = csv.writer(csvbestand, dialect='excel', lineterminator ='\n')
-        wr.writerow([ "Time", "Datum", "Hostname", "Platform", "Encoding", "Resultaat", "Processen", "Services", "CPU Usage", "RAM %",
+        wr.writerow([ "Count", "Time", "Datum", "Hostname", "Platform", "Encoding", "Resultaat", "Processen", "Services", "CPU Usage", "RAM %",
                      "RAM Geheugen Vrij", "RAM gebeugen Usage", "RAM totaal", "IP", "HDD ruimte", "System Uptime"])
         wr.writerow(Time)
     else:

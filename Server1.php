@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="5" />
+    <meta http-equiv="refresh" content="60" />
     <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +40,9 @@
             </div>
         </div>
     </nav>
-
+<div class = "container">
+    <img src = "CPUComputerA.png" width = "480" height = "480"><img src = "RAMComputerA.png" width = "480" height = "480">
+</div>
 <?php
 
 echo "<html><body><table>\n\n";

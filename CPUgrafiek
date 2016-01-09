@@ -1,3 +1,22 @@
 import csv
-import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter as ff
+import datetime as dt
+import matplotlib as mpl
+list_CPU1 = []
+list_CPU2 = []
 
+input_file = csv.DictReader(open("C:\\Python\\Python2\\ComputerA.csv"))
+for row in input_file:
+    list_CPU1.append(float(row["CPU Usage"]))
+    list_CPU2.append(float(100 - list_CPU1[-1]))
+print list_CPU1
+print list_CPU2
+
+plt.plot(list_CPU1, label = 'CPU Gebruik')
+plt.plot(list_CPU2, label = 'CPU Vrij')
+plt.xlabel('Metingsnummer')
+plt.ylabel('Percentage')
+
+plt.legend()
+plt.savefig("CPUComputerA.png")
