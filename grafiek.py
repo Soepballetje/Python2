@@ -1,11 +1,12 @@
 import csv
 import matplotlib.pyplot as plt
-import pylab
+import datetime
 
 list_Ram1 = []
 list_Ram2 = []
 list_Ram3 = []
 Time = []
+a = [len(Time)]
 
 input_file = csv.DictReader(open("Desktop-Ward.csv"))
 for row in input_file:
@@ -19,13 +20,19 @@ print list_Ram2
 print list_Ram3
 print Time
 
-plt.plot(list_Ram1, label='Ram percentage')
+plt.figure(1)
+plt.subplot(211)
 plt.plot(list_Ram2, label='Vrije Ram geheugen')
 plt.plot(list_Ram3, label='Totale Ram geheugen')
+plt.legend()
+
+plt.subplot(212)
+plt.plot(list_Ram1, label='Ram percentage')
+
 plt.xlabel('Tijd')
 plt.ylabel('Hoeveelheid')
 plt.title('Ram statistics')
-pylab.xlim([0, 24])
+plt.xticks(a, Time, rotation='vertical')
 
 plt.legend()
 # plt.savefig('ram.png')

@@ -1,27 +1,12 @@
-import numpy, scipy, pylab, random
+import datetime
+import matplotlib.pyplot as plt
 
-xs = []
-rawsignal = []
-with open("test.dat", 'r') as f:
-      for line in f:
-            if line[0] != '#' and len(line) > 0:
-                xs.append( int( line.split()[0] ) )
-                rawsignal.append( int( line.split()[1] ) )
+x = [datetime.date(2014, 1, 29), datetime.date(2014, 1, 29), datetime.date(2014, 1, 29)]
+y = [2, 4, 1]
 
-h, w = 3, 1
-pylab.figure(figsize=(12,9))
-pylab.subplots_adjust(hspace=.7)
-
-pylab.subplot(h,w,1)
-pylab.title("Signal")
-pylab.plot(xs,rawsignal)
-
-pylab.subplot(h,w,2)
-pylab.title("FFT")
-fft = scipy.fft(rawsignal)
-#~ pylab.axis([None,None,0,1000])
-pylab.ylim([0,1000])
-pylab.plot(abs(fft))
-
-
-pylab.show()
+fig, ax = plt.subplots()
+ax.plot_date(x, y, markerfacecolor='CornflowerBlue', markeredgecolor='white')
+fig.autofmt_xdate()
+ax.set_xlim([datetime.date(2014, 1, 26), datetime.date(2014, 2, 1)])
+ax.set_ylim([0, 5])
+plt.show()
