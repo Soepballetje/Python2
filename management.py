@@ -4,7 +4,7 @@ from time import strftime
 from lxml import etree
 import os
 import logging
-from grafiek import graph
+import grafiek
 
 
 def uitvragen(client,ServerIP):
