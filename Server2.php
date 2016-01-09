@@ -36,7 +36,7 @@
 <?php
 
 echo "<html><body><table>\n\n";
-$f = fopen("C:\Python\Python2\ComputerB.csv", "r");
+$f = fopen("C:\inetpub\wwwroot\ComputerB.csv", "r");
 while (($line = fgetcsv($f)) !== false) {
         echo "<tr>";
         foreach ($line as $cell) {
@@ -47,7 +47,6 @@ while (($line = fgetcsv($f)) !== false) {
 fclose($f);
 echo "\n</table></body></html>";
 
-exec("C:\Python27\Python.exe C:\Python\management.py");
 
 ?>
 
