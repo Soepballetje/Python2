@@ -13,12 +13,11 @@ for row in input_file:
     Time.append(str(row["Time"]))
     list_Ram1.append(float(row["RAM %"]))
     list_Ram2.append(float(row["RAM Geheugen Vrij"]))
-    list_Ram3.append(float(row["RAM totaal"]))
+    list_Ram3.append((float(row["RAM totaal"] - float(row["RAM Geheugen Vrij"]))))
 
 print list_Ram1
 print list_Ram2
 print list_Ram3
-print Time
 
 plt.figure(1)
 plt.subplot(211)
