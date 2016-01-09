@@ -13,6 +13,7 @@ for row in input_file:
     list_Ram3.append(float(row["RAM totaal"]))
     gebruik.append(list_Ram3[-1] - list_Ram2[-1])
 
+
 plt.figure(1)
 plt.subplot(211)
 plt.plot(list_Ram2, label='Vrije Ram geheugen')
