@@ -108,6 +108,7 @@ def uitvragen(client,ServerIP):
         print "Hostname node is:", r17
         Lists[13].append(r17)
 
+    datum = strftime("%H:%M:%S")
     Time = strftime("%Y-%m-%d %H:%M:%S"), r17, r1, r2, r3, r4, r5, r6, r10, r11, r12, r13, r14, r15, r16
     if not os.path.isfile("C:\\Python\\"+r17+".csv"):
         csvbestand = open(r17+".csv", 'wb')
