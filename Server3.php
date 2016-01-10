@@ -33,7 +33,7 @@
         </div>
     </nav>
 <div class = "container">
-    <img src = "CPUComputerC.png" width = "480" height = "480"><img src = "RAMComputerC.png" width = "480" height = "480">
+    <img src = "ComputerCRAM.png" width = "480" height = "480"><img src = "ComputerCCPU.png" width = "480" height = "480">
 </div>
 <?php
 

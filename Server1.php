@@ -41,7 +41,7 @@
         </div>
     </nav>
 <div class = "container">
-    <img src = "CPUComputerA.png" width = "480" height = "480"><img src = "RAMComputerA.png" width = "480" height = "480">
+    <img src = "ComputerARAM.png" width = "480" height = "480"><img src = "ComputerACPU.png" width = "480" height = "480">
 </div>
 <?php
 

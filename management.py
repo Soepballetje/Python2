@@ -4,7 +4,7 @@ from time import strftime
 from lxml import etree
 import os
 import logging
-
+import matplotlib.pyplot as plt
 
 def uitvragen(client,ServerIP):
     Lists = [[] for i in range(20)]
@@ -122,41 +122,79 @@ def uitvragen(client,ServerIP):
         print "Hostname node is:", r17
         Lists[13].append(r17)
 
-    f = open(r17+'.csv', 'r')
-    countrdr = csv.DictReader(f)
-    totalrows = 1
-    for row in countrdr:
-      totalrows += 1
-    f.close()
+    try:
+        f = open(r17+'.csv', 'r')
+        countrdr = csv.DictReader(f)
+        totalrows = 1
+        for row in countrdr:
+          totalrows += 1
+        f.close()
+    except:
+        pass
 
-    Datum = strftime("%Y-%m-%d")
-    Time = totalrows, strftime("%H:%M:%S"), Datum, r17, r1, r2, r3, r4, r5, r6, r10, r11, r12, r13, r14, r15, r16
-    if not os.path.isfile("C:\\Users\\Ward Bakker\\PycharmProjects\\Python1\\"+r17+".csv"):
-        csvbestand = open("C:\\Users\\Ward Bakker\\PycharmProjects\\Python1\\"+r17+".csv", 'wb')
     Datum = strftime("%Y-%m-%d")
     Time = strftime("%H:%M:%S"), Datum, r17, r1, r2, r3, r4, r5, r6, r10, r11, r12, r13, r14, r15, r16
     if not os.path.isfile("C:\\Python\\Python2\\"+r17+".csv"):
         csvbestand = open("C:\\Python\\Python2\\"+r17+".csv", 'wb')
         wr = csv.writer(csvbestand, dialect='excel', lineterminator ='\n')
-        wr.writerow(["Count","Time", "Datum", "Hostname", "Platform", "Encoding", "Resultaat", "Processen", "Services", "CPU Usage", "RAM %",
         wr.writerow([ "Count", "Time", "Datum", "Hostname", "Platform", "Encoding", "Resultaat", "Processen", "Services", "CPU Usage", "RAM %",
                      "RAM Geheugen Vrij", "RAM gebeugen Usage", "RAM totaal", "IP", "HDD ruimte", "System Uptime"])
         wr.writerow(Time)
     else:
-        csvbestand = open(r17+".csv", 'a')
-        wr = csv.writer(csvbestand, dialect='excel', lineterminator='\n')
         csvbestand = open("C:\\Python\\Python2\\"+r17+".csv", 'a')
         wr = csv.writer(csvbestand, dialect='excel', lineterminator ='\n')
         wr.writerow(Time)
 
+
+    list_Ram1 = []
+    list_Ram2 = []
+    list_Ram3 = []
+    gebruik = []
+
+    input_file = csv.DictReader(open("C:\\Python\\Python2\\"+r17+".csv"))
+    for row in input_file:
+        list_Ram1.append(float(row["RAM %"]))
+        list_Ram2.append(float(row["RAM Geheugen Vrij"]))
+        list_Ram3.append(float(row["RAM totaal"]))
+        gebruik.append(list_Ram3[-1] - list_Ram2[-1])
+
+    plt.figure(1)
+    plt.subplot(211)
+    plt.plot(list_Ram2, label='Vrije Ram geheugen')
+    plt.plot(gebruik, label='Totale Ram geheugen')
+    plt.title('Ram statistics')
+    plt.legend()
+
+    plt.subplot(212)
+    plt.plot(list_Ram1, label='Ram percentage')
+    plt.xlabel('Tijd')
+    plt.ylabel('Percentage %')
+    plt.legend()
+    plt.savefig("C:\\inetpub\\wwwroot\\"+r17+"RAM.png")
+
+
+
+
+    list_CPU1 = []
+    list_CPU2 = []
+    for row in input_file:
+        list_CPU1.append(float(row["CPU Usage"]))
+        list_CPU2.append(float(100 - list_CPU1[-1]))
+    print list_CPU1
+    print list_CPU2
+
+    plt.plot(list_CPU1, label = 'CPU Gebruik')
+    plt.plot(list_CPU2, label = 'CPU Vrij')
+    plt.xlabel('Metingsnummer')
+    plt.ylabel('Percentage')
+
+    plt.legend()
+    plt.savefig("C:\\inetpub\\wwwroot\\"+r17+"CPU.png")
+
 logging.basicConfig(filename='Python.log', level = logging.ERROR)
-# ("C:\\inetpub\\wwwroot\\
 
 
-
-logging.basicConfig(filename = 'Python.log', level = logging.ERROR)
-
-data = 'host1.xml'
+data = 'host.xml'
 xmldata = etree.parse(data)
 host = xmldata.xpath('/groep/host/ip/text()')
 
