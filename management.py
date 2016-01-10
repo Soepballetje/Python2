@@ -4,6 +4,7 @@ from time import strftime
 from lxml import etree
 import os
 import logging
+from grafiek import G
 
 
 def uitvragen(client,ServerIP):
@@ -112,7 +113,7 @@ def uitvragen(client,ServerIP):
     countrdr = csv.DictReader(f)
     totalrows = 1
     for row in countrdr:
-      totalrows += 1
+        totalrows += 1
     f.close()
 
     Datum = strftime("%Y-%m-%d")
