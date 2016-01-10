@@ -99,7 +99,7 @@ def uitvragen(client,ServerIP):
     if not 16:
         logging.error("r16 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP)
     else:
-        print "De uptime van dit systeem betreft:", round(r16, 2),"uur"
+        print "De uptime van dit systeem betreft:", round(r16, 2), "uur"
         Lists[12].append(r16)
 
     r17 = str(client.get_value(number=17).resultaat)
@@ -109,12 +109,16 @@ def uitvragen(client,ServerIP):
         print "Hostname node is:", r17
         Lists[13].append(r17)
 
-    f = open(r17+'.csv', 'r')
-    countrdr = csv.DictReader(f)
-    totalrows = 1
-    for row in countrdr:
-        totalrows += 1
-    f.close()
+    try:
+        f = open(r17+'.csv', 'r')
+        countrdr = csv.DictReader(f)
+        totalrows = 1
+        for row in countrdr:
+            totalrows += 1
+        f.close()
+    except:
+        return "test"
+        pass
 
     Datum = strftime("%Y-%m-%d")
     Time = totalrows, strftime("%H:%M:%S"), Datum, r17, r1, r2, r3, r4, r5, r6, r10, r11, r12, r13, r14, r15, r16
@@ -154,7 +158,6 @@ def uitvragen(client,ServerIP):
     plt.xlabel('Tijd')
     plt.ylabel('Percentage %')
     plt.legend()
-
     plt.savefig('C:\\xampp\\htdocs\\python2\\ram.png')
 
 logging.basicConfig(filename='Python.log', level=logging.ERROR)
