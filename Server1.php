@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-<style>                                         //Standaard webpagina zie onderaan voor informatie.
+<style>
     table, th, td {
     border: 1px solid black;
     padding: 5px
@@ -40,12 +40,12 @@
             </div>
         </div>
     </nav>
-<div class = "container">               // Plaatjes worden toegevoegd op website.
+<div class = "container">
     <img src = "ComputerARAM.png" width = "480" height = "480"><img src = "ComputerACPU.png" width = "480" height = "480">
 </div>
 <?php
 
-echo "<html><body><table>\n\n";         // Tabel wordt aangemaakt en gevuld met CSV informatie.
+echo "<html><body><table>\n\n";
 $f = fopen("C:\inetpub\wwwroot\ComputerA.csv", "r");
 while (($line = fgetcsv($f)) !== false) {
         echo "<tr>";
@@ -55,7 +55,7 @@ while (($line = fgetcsv($f)) !== false) {
         echo "</tr>\n";
 }
 fclose($f);
-echo "\n</table></body></html>";        // Tabel wordt afgesloten.
+echo "\n</table></body></html>";
 
 
 ?>
