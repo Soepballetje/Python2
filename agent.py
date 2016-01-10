@@ -40,7 +40,7 @@ def get_value(number):
     if number == 4:
         p = subprocess.Popen(['powershell.exe',                # Atlijd gelijk of volledig pad naar powershell.exe
             '-ExecutionPolicy', 'bypass',                      # Override current Execution Policy
-            "C:\\Python\\agent_counters.ps1"],   # Naam van en pad naar je PowerShell script
+            "C:\\Python\\agent_counters.ps1"],                 # Naam van en pad naar je PowerShell script
             stdout=subprocess.PIPE)                            # Zorg ervoor dat je de STDOUT kan opvragen.
         output = p.stdout.read()                               # De stdout
         return output
@@ -53,23 +53,27 @@ def get_value(number):
         output = p.stdout.read()                          # De stdout
         return output
 
-    if number == 6:
+    if number == 6:                                             # CPU percentage dat in gebruik is wordt opgevraagd.
         return str(psutil.cpu_percent())
     if number == 10:
-        return psutil.virtual_memory().percent
+        return psutil.virtual_memory().percent                  # RAM percentage dat in gebruik is wordt opgevraagd.
     if number == 11:
-        return psutil.virtual_memory().free
+        return psutil.virtual_memory().free                     # RAM totaal dat vrij is wordt opgevraagd, dit is in bits.
     if number == 12:
-        return psutil.virtual_memory().used
+        return psutil.virtual_memory().used                     # RAM totaal dat in gebruik is wordt opgevraagd, dit is in bits.
     if number == 13:
-        return psutil.virtual_memory().total
+        return psutil.virtual_memory().total                    # RAM totaal dat het systeem heeft wordt opgevraagd.
     if number == 14:
-        return socket.gethostbyname(socket.gethostname())
+        return socket.gethostbyname(socket.gethostname())       # Het eerste IP adres wordt opgevraagd.
     if number == 15:
-            return psutil.disk_usage('C:\\').free
-    if number == 16:
+        z = subprocess.Popen(['powershell.exe',                 # Vrije ruimte op de schijf C wordt opgevraagd doormiddel van powershell.
+            "Get-PSDrive C | foreach {$_.free}"],
+            stdout=subprocess.PIPE)
+        zoutput = z.stdout.read()
+        return zoutput
+    if number == 16:                                            # De uptime van het systeem wordt opgevraagd.
         return uptime()
-    if number == 17:
+    if number == 17:                                            # De hostname van het systeem wordt opgevraagd.
         return socket.gethostname()
     # Last value
     return None
