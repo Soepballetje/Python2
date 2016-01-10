@@ -67,8 +67,9 @@ def uitvragen(client,ServerIP):
     if not r11:
         logging.error("r11 heeft geen resultaat kunnen uitvragen het volgende adres:"+ ServerIP+ strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
+        r11a = round(r11, 2)
         print "Geheugen vrij:", round(r11,2), "GB"
-        Lists[7].append(r11)
+        Lists[7].append(r11a)
 
 
 
@@ -76,16 +77,18 @@ def uitvragen(client,ServerIP):
     if not r12:
         logging.error("r12 heeft geen resultaat kunnen uitvragen het volgende adres:"+ ServerIP+ strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
+        r12a = round(r12, 2)
         print "Geheugen in gebruik:", round(r12, 2), "GB"
-        Lists[8].append(r12)
+        Lists[8].append(r12a)
 
 
     r13 = float(client.get_value(number=13).resultaat) / 1024 / 1024 / 1024 # De resultaten r13 in het agent script wordt uitgevraagd.
     if not r13:
         logging.error("r13 heeft geen resultaat kunnen uitvragen het volgende adres:"+ ServerIP+ strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
+        r13a = round(r13, 2)
         print "Geheugen totaal:", round(r13, 2), " GB"
-        Lists[9].append(r13)
+        Lists[9].append(r13a)
 
 
 
@@ -101,8 +104,9 @@ def uitvragen(client,ServerIP):
     if not r15:
         logging.error("r15 heeft geen resultaat kunnen uitvragen het volgende adres:"+ ServerIP+ strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
-        print "Totaal vrije ruimte", round(r15, 2), "GB"
-        Lists[11].append(r15)
+        r15a = round(r15, 2)
+        print "Totaal vrije ruimte", r15a, "GB"
+        Lists[11].append(r15a)
 
 
 
@@ -110,8 +114,9 @@ def uitvragen(client,ServerIP):
     if not 16:
         logging.error("r16 heeft geen resultaat kunnen uitvragen het volgende adres:"+ ServerIP+ strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
+        r16a = round(r16 ,2)
         print "De uptime van dit systeem betreft:", round(r16, 2),"uur"
-        Lists[12].append(r16)
+        Lists[12].append(r16a)
 
 
 
@@ -133,7 +138,7 @@ def uitvragen(client,ServerIP):
         pass
 
     Datum = strftime("%Y-%m-%d")                                        #   Datum wordt gedefineerd.
-    Time = totalrows, strftime("%H:%M:%S"), Datum, r17, r1, r2, r3, r4, r5, r6, r10, r11, r12, r13, r14, r15, r16 # alle gegevens  uit de opgevraagde functies worden  toegevoegd aan een variable.
+    Time = totalrows, strftime("%H:%M:%S"), Datum, r17, r1, r2, r3, r4, r5, r6, r10, r11a, r12a, r13a, r14, r15a, r16a # alle gegevens  uit de opgevraagde functies worden  toegevoegd aan een variable.
     if not os.path.isfile("C:\\inetpub\\wwwroot\\"+r17+".csv"):         #Hier wordt gechecked of het CSV bestand al bestaat of niet. DIt is op basis van computernaam.
         csvbestand = open("C:\\inetpub\\wwwroot\\"+r17+".csv", 'wb')    # ALs deze niet bestaat wordt deze aagemaakt.
         wr = csv.writer(csvbestand, dialect='excel', lineterminator ='\n')
