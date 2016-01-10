@@ -24,9 +24,9 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
                     <!-- drop down menu -->
-                            <li><a href="server1.html">Server 1</a></li>
-                            <li><a href="Server2.html">Server 2</a></li>
-                            <li><a href="Server3.html">Server 3</a></li>
+                            <li><a href="server1.php">Server 1</a></li>
+                            <li><a href="server2.php">Server 2</a></li>
+                            <li><a href="server3.php">Server 3</a></li>
                     </li>
                 </ul>
             </div>
@@ -35,6 +35,8 @@
 <div class = "container">
     <img src = "ComputerBRAM.png" width = "480" height = "480"><img src = "ComputerBCPU.png.png" width = "480" height = "480">
 </div>
+<?php
+
 <?php
 
 echo "<html><body><table>\n\n";
@@ -48,8 +50,6 @@ while (($line = fgetcsv($f)) !== false) {
 }
 fclose($f);
 echo "\n</table></body></html>";
-
-
 ?>
 
 </body>
