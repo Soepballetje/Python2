@@ -21,7 +21,7 @@ print "<body>"
 print '<nav class="navbar navbar-inverse">'
 print '<div class="container-fluid">'
 print '<div class="navbar-header">'
-print '<a href="Server1.py" class="navbar-brand">Management Site</a>'
+print '<a href="home.py" class="navbar-brand">Management Site</a>'
 print '</div>'
 print '<div>'
 print '<ul class="nav navbar-nav">'
