@@ -6,6 +6,7 @@ import os
 import logging
 import matplotlib.pyplot as plt
 
+
 def uitvragen(client,ServerIP):
     Lists = [[] for i in range(20)]
 
@@ -202,7 +203,7 @@ for i in host:
                 namespace="http://example.com/sample.wsdl",
                 soap_ns='soap',
                 ns=False)
-            uitvragen(client,i)
+            uitvragen(client, i)
         else:
             logging.critical("Host down"+hostname+strftime(" %Y-%m-%d %H:%M:%S"))   # Logging
 
