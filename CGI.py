@@ -8,7 +8,7 @@ form = cgi.FieldStorage()
 
 
 
-print "<!DOCTYPE html>"
+print "<!DOCTYPE html>"                 #CGI website
 print '<html lang="en">'
 print "<head>"
 print "<title>MANAGEMENT</title>"
@@ -26,7 +26,7 @@ print '<a href="Website.html" class="navbar-brand">Management site</a>'
 print '</div>'
 print '<div>'
 print '<ul class="nav navbar-nav">'
-print '<li class="active"><a href="#">Home</a></li>'
+print '<li class="active"><a href="CGI.py">Home</a></li>'
 print '<li><a href="Server1.php">Server 1</a></li>'
 print '<li><a href="Server2.php">Server 2</a></li>'
 print '<li><a href="Server3.php">Server 3</a></li>'
