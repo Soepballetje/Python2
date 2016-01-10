@@ -121,27 +121,44 @@ def uitvragen(client,ServerIP):
     else:
         print "Hostname node is:", r17
         Lists[13].append(r17)
+
+    f = open(r17+'.csv', 'r')
+    countrdr = csv.DictReader(f)
+    totalrows = 1
+    for row in countrdr:
+      totalrows += 1
+    f.close()
+
+    Datum = strftime("%Y-%m-%d")
+    Time = totalrows, strftime("%H:%M:%S"), Datum, r17, r1, r2, r3, r4, r5, r6, r10, r11, r12, r13, r14, r15, r16
+    if not os.path.isfile("C:\\Users\\Ward Bakker\\PycharmProjects\\Python1\\"+r17+".csv"):
+        csvbestand = open("C:\\Users\\Ward Bakker\\PycharmProjects\\Python1\\"+r17+".csv", 'wb')
     Datum = strftime("%Y-%m-%d")
     Time = strftime("%H:%M:%S"), Datum, r17, r1, r2, r3, r4, r5, r6, r10, r11, r12, r13, r14, r15, r16
     if not os.path.isfile("C:\\Python\\Python2\\"+r17+".csv"):
         csvbestand = open("C:\\Python\\Python2\\"+r17+".csv", 'wb')
         wr = csv.writer(csvbestand, dialect='excel', lineterminator ='\n')
+        wr.writerow(["Count","Time", "Datum", "Hostname", "Platform", "Encoding", "Resultaat", "Processen", "Services", "CPU Usage", "RAM %",
         wr.writerow([ "Count", "Time", "Datum", "Hostname", "Platform", "Encoding", "Resultaat", "Processen", "Services", "CPU Usage", "RAM %",
                      "RAM Geheugen Vrij", "RAM gebeugen Usage", "RAM totaal", "IP", "HDD ruimte", "System Uptime"])
         wr.writerow(Time)
     else:
+        csvbestand = open(r17+".csv", 'a')
+        wr = csv.writer(csvbestand, dialect='excel', lineterminator='\n')
         csvbestand = open("C:\\Python\\Python2\\"+r17+".csv", 'a')
         wr = csv.writer(csvbestand, dialect='excel', lineterminator ='\n')
         wr.writerow(Time)
+
+logging.basicConfig(filename='Python.log', level = logging.ERROR)
 # ("C:\\inetpub\\wwwroot\\
 
 
 
 logging.basicConfig(filename = 'Python.log', level = logging.ERROR)
 
-data = 'host.xml'
+data = 'host1.xml'
 xmldata = etree.parse(data)
-host= xmldata.xpath('/groep/host/ip/text()')
+host = xmldata.xpath('/groep/host/ip/text()')
 
 
 
