@@ -64,7 +64,7 @@ def uitvragen(client,ServerIP):
     if not r11:
         logging.error("r11 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP)
     else:
-        print "Geheugen vrij:", round(r11,2), "GB"
+        print "Geheugen vrij:", round(r11, 2), "GB"
         Lists[7].append(r11)
 
     r12 = float(client.get_value(number=12).resultaat) / 1024 / 1024 / 1024

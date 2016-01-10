@@ -1,6 +1,6 @@
 #!C:\Python27\python.exe
 import cgi, cgitb
-import csv
+
 print "content-Type: text/html\n"
 cgitb.enable()
 
@@ -24,7 +24,8 @@ print '<a href="Server1.py" class="navbar-brand">Server 1</a>'
 print '</div>'
 print '<div>'
 print '<ul class="nav navbar-nav">'
-print '<li class="active"><a href="#">Home</a></li>'
+print '<li class="active"><a href="">Home</a></li>'
+print '<li><a href="Server1.py">Server 1</a></li>'
 print '<li><a href="Server2.html">Server 2</a></li>'
 print '<li><a href="Server3.html">Server 3</a></li>'
 print '</ul>'
@@ -34,21 +35,4 @@ print '</div>'
 print '</div>'
 print '</nav>'
 print '<div>'
-print '<TABLE BORDER="1">'
-print '<TR><TD>Time</TD>'
-print '<TD>Hostname:</TD>'
-print '<TD>Platform:</TD>'
-print '<TD>Encoding:</TD>'
-print '<TD>Resultaat:</TD>'
-print '<TD>Processen:</TD>'
-print '<TD>Services:</TD>'
-print '<TD>CPU Usage:</TD>'
-print '<TD>RAM Usage:</TD>'
-print '<TD>Vrije RAM:</TD>'
-print '<TD>RAM in Gebruik:</TD>'
-print '<TD>RAM totaal:</TD>'
-print '<TD>IP:</TD>'
-print '<TD>HDD ruimte:</TD>'
-print '<TD>Sys uptime:</TD></TR>'
-print '<TR> <TD>' '</TD></TR>'
-print '</TABLE>'
+print '</div>'
