@@ -64,7 +64,7 @@ def uitvragen(client,ServerIP):
         logging.error("r11 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
         r11a = round(r11, 2)
-        print "Geheugen vrij:", round(r11,2), "GB"
+        print "Geheugen vrij:", round(r11, 2), "GB"
         Lists[7].append(r11a)
 
     r12 = float(client.get_value(number=12).resultaat) / 1024 / 1024 / 1024 # De resultaten r12 in het agent script wordt uitgevraagd.
@@ -102,7 +102,7 @@ def uitvragen(client,ServerIP):
     if not 16:
         logging.error("r16 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
-        r16a = round(r16 ,2)
+        r16a = round(r16, 2)
         print "De uptime van dit systeem betreft:", round(r16, 2), "uur"
         Lists[12].append(r16a)
 
@@ -173,23 +173,23 @@ def uitvragen(client,ServerIP):
 
     plt.figure(2)                                                           # Nieuw figuur
     plt.subplot(311)
-    plt.plot(list_CPU1, label = 'CPU Gebruik')                              # De lijn CPU gebruik.
-    plt.plot(list_CPU2, label = 'CPU Vrij')                                 # De lijn CPU Vrij.
+    plt.plot(list_CPU1, label='CPU Gebruik')                              # De lijn CPU gebruik.
+    plt.plot(list_CPU2, label='CPU Vrij')                                 # De lijn CPU Vrij.
     plt.xlabel('Metingsnummer')
     plt.ylabel('Percentage %')
     plt.legend()
     plt.savefig("C:\\inetpub\\wwwroot\\"+r17+"CPU.png")                     # wordt opgeslagen als afbeelding. Deze wordt ingeladen op de website.
     plt.clf()
-#-----------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------------------
 
-logging.basicConfig(filename='Python.log', level = logging.ERROR)           # logging wordt aangemaakt.
-#-----------------------------------------------------------------------------------------------------------------------
+logging.basicConfig(filename='Python.log', level=logging.ERROR)           # logging wordt aangemaakt.
+# ----------------------------------------------------------------------------------------------------------------------
 
 data = 'host.xml'                                                           # In dit XML bestand bevinden zich de hosts die uitgevraagd worden.
 xmldata = etree.parse(data)
 host = xmldata.xpath('/groep/host/ip/text()')
 
-#-----------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------------------
 
 for i in host:
     hostname = i
@@ -197,11 +197,11 @@ for i in host:
         reply = os.system("ping -n 1 " + hostname)                          # wordt een ping uitgevoerd om te checken of de host wel beschikbaar is.
         if reply == 0:                                                      # Indien deze niet beschikbaar is wordt naar de else gesprongen en een melding host down gezet in de log.
             client = SoapClient(
-                location = 'http://'+i+':8008/',
-                action = 'http://localhost:8008/', # SOAPAction
-                namespace = "http://example.com/sample.wsdl",
+                location='http://'+i+':8008/',
+                action='http://localhost:8008/',  # SOAPAction
+                namespace="http://example.com/sample.wsdl",
                 soap_ns='soap',
-                ns = False)
+                ns=False)
             uitvragen(client,i)
         else:
             logging.critical("Host down"+hostname+strftime(" %Y-%m-%d %H:%M:%S"))   # Logging
