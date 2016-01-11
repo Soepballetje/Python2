@@ -205,7 +205,7 @@ for i in host:
                 ns=False)
             uitvragen(client, i)
         else:
-            logging.critical("Host down"+hostname+strftime(" %Y-%m-%d %H:%M:%S"))   # Logging
+            logging.critical("Host down "+hostname+strftime(" %Y-%m-%d %H:%M:%S"))   # Logging
 
 
     except:
