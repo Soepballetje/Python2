@@ -20,8 +20,6 @@ print '<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.
 print '<link rel="stylesheet" type="text/css" href="opmaak.css">'
 print "</head>"
 print "<body>"
-print '<h1>Welkom op onze management site</h1>'
-print '<p> Bovenstaand kun u op server 1 t/m 3 klikken en zult u de meetgegevens van de individuele server zien</p>'
 print '<nav class="navbar navbar-inverse">'
 print '<div class="container-fluid">'
 print '<div class="navbar-header">'
@@ -40,8 +38,8 @@ print '</div>'
 print '</div>'
 print '</nav>'
 print '<div>'
-
-
+print '<h1>Welkom op onze management site</h1>'
+print '<p> Bovenstaand kun u op server 1 t/m 3 klikken en zult u de meetgegevens van de individuele server zien</p>'
 print '</div>'
 print '</body>'
 print '</html>'
