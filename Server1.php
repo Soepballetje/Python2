@@ -30,9 +30,9 @@
             <!-- Menu Items -->
             <div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="CGI.py">Home</a></li>
+                    <li><a href="CGI.py">Home</a></li>
                     <!-- drop down menu -->
-                            <li><a href="Server1.php">Server 1</a></li>
+                            <li  class="active"><a href="Server1.php">Server 1</a></li>
                             <li><a href="Server2.php">Server 2</a></li>
                             <li><a href="Server3.php">Server 3</a></li>
                     </li>
