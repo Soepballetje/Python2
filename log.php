@@ -34,31 +34,18 @@
                     <!-- drop down menu -->
                             <li><a href="Server1.php">Server 1</a></li>
                             <li><a href="Server2.php">Server 2</a></li>
-                            <li  class="active"><a href="Server3.php">Server 3</a></li>
-                            <li><a href="log.php">Server Logging</a></li>
+                            <li><a href="Server3.php">Server 3</a></li>
+                            <li class="active"><a href="log.php">Server logging</a></li>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-<div class = "container">
-    <img src = "ComputerCRAM.png" width = "480" height = "480"><img src = "ComputerCCPU.png" width = "480" height = "480">
 </div>
 <?php
 
-echo "<html><body><table>\n\n";
-$f = fopen("C:\inetpub\wwwroot\ComputerC.csv", "r");
-while (($line = fgetcsv($f)) !== false) {
-        echo "<tr>";
-        foreach ($line as $cell) {
-                echo "<td>" . htmlspecialchars($cell) . "</td>";
-        }
-        echo "</tr>\n";
-}
-fclose($f);
-echo "\n</table></body></html>";
 
-
+echo file_get_contents( "Python.log" );
 ?>
 </body>
 </html>

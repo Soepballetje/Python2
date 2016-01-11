@@ -10,42 +10,42 @@ import matplotlib.pyplot as plt
 def uitvragen(client,ServerIP):
     Lists = [[] for i in range(20)]
 
-    r1 = str(client.get_value(number=1).resultaat)              # De resultaten r1 in het agent script wordt uitgevraagd.
+    r1 = str(client.get_value(number=1).resultaat)              # Het platform in het agent script wordt uitgevraagd.
     if not r1:
         logging.error("r1 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging.
     else:
         print "Het platform is: ", r1
         Lists[0].append(r1)
 
-    r2 = str(client.get_value(number=2).resultaat)              # De resultaten r2 in het agent script wordt uitgevraagd.
+    r2 = str(client.get_value(number=2).resultaat)              # De encoding in het agent script wordt uitgevraagd.
     if not r2:
         logging.error("r2 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
         print "System default encoding: ", r2
         Lists[1].append(r2)
 
-    r3=str(client.get_value(number=3).resultaat)                # De resultaten r3 in het agent script wordt uitgevraagd.
+    r3=str(client.get_value(number=3).resultaat)                # De connectie poort in het agent script wordt uitgevraagd.
     if not r3:
         logging.error("r3 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
         print "Resultaat nummer= :", int(r3)  # r3 is a number!
         Lists[2].append(r3)
 
-    r4 = str(client.get_value(number=4).resultaat)              # De resultaten r4 in het agent script wordt uitgevraagd.
+    r4 = str(client.get_value(number=4).resultaat)              # Het aantal processen in het agent script wordt uitgevraagd.
     if not r4:
         logging.error("r4 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
         print "Het aantal processen: ", r4.rstrip()  # This is a multiline: strip the newline from the result!
         Lists[3].append(r4)
 
-    r5=str(client.get_value(number=5).resultaat)                # De resultaten r5 in het agent script wordt uitgevraagd.
+    r5=str(client.get_value(number=5).resultaat)                # Het aantal services in het agent script wordt uitgevraagd.
     if not r5:
         logging.error("r5 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
         print "Count services: ", r5.rstrip()
         Lists[4].append(r5)
 
-    r6 = str(client.get_value(number=6).resultaat)              # De resultaten r6 in het agent script wordt uitgevraagd.
+    r6 = str(client.get_value(number=6).resultaat)              # Het CPU gebruik in het agent script wordt uitgevraagd.
     if not r6:
         logging.error("r6 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
 
@@ -53,14 +53,14 @@ def uitvragen(client,ServerIP):
         print "CPU Usage: ", r6, "%"
         Lists[5].append(r6)
 
-    r10 = float(client.get_value(number=10).resultaat)          # De resultaten r10 in het agent script wordt uitgevraagd.
+    r10 = float(client.get_value(number=10).resultaat)          #Het geheugen percentage in het agent script wordt uitgevraagd.
     if not r10:
         logging.error("r10 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
         print "Geheugen Percentage:", r10, "%"
         Lists[6].append(r10)
 
-    r11 = float(client.get_value(number=11).resultaat) / 1024 / 1024 / 1024 # De resultaten r11 in het agent script wordt uitgevraagd.
+    r11 = float(client.get_value(number=11).resultaat) / 1024 / 1024 / 1024 # Het totale vrije geheugen in het agent script wordt uitgevraagd.
     if not r11:
         logging.error("r11 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
@@ -68,7 +68,7 @@ def uitvragen(client,ServerIP):
         print "Geheugen vrij:", round(r11, 2), "GB"
         Lists[7].append(r11a)
 
-    r12 = float(client.get_value(number=12).resultaat) / 1024 / 1024 / 1024 # De resultaten r12 in het agent script wordt uitgevraagd.
+    r12 = float(client.get_value(number=12).resultaat) / 1024 / 1024 / 1024 # Het geheugen dat in gebruik is wordt in het agent script uitgevraagd.
     if not r12:
         logging.error("r12 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
@@ -76,7 +76,7 @@ def uitvragen(client,ServerIP):
         print "Geheugen in gebruik:", round(r12, 2), "GB"
         Lists[8].append(r12a)
 
-    r13 = float(client.get_value(number=13).resultaat) / 1024 / 1024 / 1024 # De resultaten r13 in het agent script wordt uitgevraagd.
+    r13 = float(client.get_value(number=13).resultaat) / 1024 / 1024 / 1024 # Het totale geheugen in het agent script wordt uitgevraagd.
     if not r13:
         logging.error("r13 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
@@ -84,14 +84,14 @@ def uitvragen(client,ServerIP):
         print "Geheugen totaal:", round(r13, 2), " GB"
         Lists[9].append(r13a)
 
-    r14 = client.get_value(number=14).resultaat     # De resultaten r14 in het agent script wordt uitgevraagd.
+    r14 = client.get_value(number=14).resultaat     # Het eerste IP adres van de agent wordt uitgevraagd.
     if not r14:
         logging.error("r14 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
         print "First IP in range is: ", r14
         Lists[10].append(r14)
 
-    r15 = float(client.get_value(number=15).resultaat) / 1024 / 1024 / 1024 # De resultaten r15 in het agent script wordt uitgevraagd.
+    r15 = float(client.get_value(number=15).resultaat) / 1024 / 1024 / 1024 # De vrije schijf ruimte in het agent script wordt uitgevraagd.
     if not r15:
         logging.error("r15 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
@@ -99,7 +99,7 @@ def uitvragen(client,ServerIP):
         print "Totaal vrije ruimte", r15a, "GB"
         Lists[11].append(r15a)
 
-    r16 = float(client.get_value(number=16).resultaat) / 60 / 60    # De resultaten r16 in het agent script wordt uitgevraagd.
+    r16 = float(client.get_value(number=16).resultaat) / 60 / 60    # De uptime van het systeem wordt in het agent script uitgevraagd.
     if not 16:
         logging.error("r16 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
@@ -107,7 +107,7 @@ def uitvragen(client,ServerIP):
         print "De uptime van dit systeem betreft:", round(r16, 2), "uur"
         Lists[12].append(r16a)
 
-    r17 = str(client.get_value(number=17).resultaat)        # De resultaten r17 in het agent script wordt uitgevraagd.
+    r17 = str(client.get_value(number=17).resultaat)        # De hostname van de agent wordt uitgevraagd.
     if not r17:
         logging.error("r17 heeft geen resultaat kunnen uitvragen het volgende adres:" + ServerIP + strftime(" %Y-%m-%d %H:%M:%S")) #Logging
     else:
@@ -126,8 +126,8 @@ def uitvragen(client,ServerIP):
 
     Datum = strftime("%Y-%m-%d")                                        # Datum wordt gedefineerd.
     Time = totalrows, strftime("%H:%M:%S"), Datum, r17, r1, r2, r3, r4, r5, r6, r10, r11a, r12a, r13a, r14, r15a, r16a # alle gegevens  uit de opgevraagde functies worden  toegevoegd aan een variable.
-    if not os.path.isfile("C:\\inetpub\\wwwroot\\"+r17+".csv"):         # Hier wordt gechecked of het CSV bestand al bestaat of niet. DIt is op basis van computernaam.
-        csvbestand = open("C:\\inetpub\\wwwroot\\"+r17+".csv", 'wb')    # ALs deze niet bestaat wordt deze aagemaakt.
+    if not os.path.isfile("C:\\inetpub\\wwwroot\\"+r17+".csv"):         # Hier wordt gechecked of het CSV bestand al bestaat of niet. Dit is op basis van computernaam.
+        csvbestand = open("C:\\inetpub\\wwwroot\\"+r17+".csv", 'wb')    # Als deze niet bestaat wordt deze aagemaakt.
         wr = csv.writer(csvbestand, dialect='excel', lineterminator='\n')
         wr.writerow([ "Count", "Time", "Datum", "Hostname", "Platform", "Encoding", "Resultaat", "Processen", "Services", "CPU Usage", "RAM %",
                      "RAM Geheugen Vrij", "RAM gebeugen Usage", "RAM totaal", "IP", "HDD ruimte", "System Uptime"]) # De headers worden toegevoegd aan het CSV bestand.
@@ -148,13 +148,13 @@ def uitvragen(client,ServerIP):
         list_Ram1.append(float(row["RAM %"]))                               # De uit te lezen kolommen.
         list_Ram2.append(float(row["RAM Geheugen Vrij"]))
         list_Ram3.append(float(row["RAM totaal"]))
-        gebruik.append(list_Ram3[-1] - list_Ram2[-1])                       # Rekensom om het gebruik te berekenen.
+        gebruik.append(list_Ram3[-1] - list_Ram2[-1])                       # Rekensom om het gebruik te berekenen. Er wordt altijd de laatste waarde in list gebruikt.
 
-    plt.figure(1)
+    plt.figure(1)                                                      # Nieuwe figuur (1)
     plt.subplot(211)
-    plt.plot(list_Ram2, label='Vrij geheugen')                         # De lijn met vrij geheugen
-    plt.plot(gebruik, label='In gebruik geheugen')                     # De lijn met geheugen wat in gebruik is
-    plt.title('RAM statistics')                                        # Titel
+    plt.plot(list_Ram2, label='Vrij geheugen')                         # De lijn met vrij geheugen.
+    plt.plot(gebruik, label='In gebruik geheugen')                     # De lijn met geheugen welke in gebruik is.
+    plt.title('RAM statistics')                                        # Titel van het figuur.
     plt.legend()
 
     plt.subplot(212)
@@ -172,31 +172,31 @@ def uitvragen(client,ServerIP):
         list_CPU2.append(float(100 - list_CPU1[-1]))                        # Rekensom om het vrije percentage te verkrijgen.
     plt.clf()                                                               # Het figuur wordt uitgewist uit de plot, dit is van belang anders verschijnt er een loop in het figuur.
 
-    plt.figure(2)                                                           # Nieuw figuur
+    plt.figure(2)                                                           # Nieuw figuur (2)
     plt.subplot(311)
-    plt.plot(list_CPU1, label='CPU Gebruik')                              # De lijn CPU gebruik.
-    plt.plot(list_CPU2, label='CPU Vrij')                                 # De lijn CPU Vrij.
-    plt.xlabel('Metingsnummer')
-    plt.ylabel('Percentage %')
+    plt.plot(list_CPU1, label='CPU Gebruik')                                # De lijn CPU gebruik.
+    plt.plot(list_CPU2, label='CPU Vrij')                                   # De lijn CPU Vrij.
+    plt.xlabel('Metingsnummer')                                             # Label aan de X as
+    plt.ylabel('Percentage %')                                              # Label aan de Y as
     plt.legend()
-    plt.savefig("C:\\inetpub\\wwwroot\\"+r17+"CPU.png")                     # wordt opgeslagen als afbeelding. Deze wordt ingeladen op de website.
+    plt.savefig("C:\\inetpub\\wwwroot\\"+r17+"CPU.png")                     # Plot wordt opgeslagen als afbeelding. Deze wordt ingeladen op de website.
     plt.clf()
 # ----------------------------------------------------------------------------------------------------------------------
 
-logging.basicConfig(filename='Python.log', level=logging.ERROR)           # logging wordt aangemaakt.
+logging.basicConfig(filename='C:\\inetpub\\wwwroot\\Python.log', level=logging.ERROR)             # logging bestand wordt aangemaakt. levels in deze applicatie zijn error en critical.
 # ----------------------------------------------------------------------------------------------------------------------
 
 data = 'host.xml'                                                           # In dit XML bestand bevinden zich de hosts die uitgevraagd worden.
 xmldata = etree.parse(data)
-host = xmldata.xpath('/groep/host/ip/text()')
+host = xmldata.xpath('/groep/host/ip/text()')                               # Het specifieke pad.
 
 # ----------------------------------------------------------------------------------------------------------------------
 
 for i in host:
     hostname = i
     try:                                                                    # Er wordt hier verbinding gemaakt met de server. Voordat dit gedaan wordt,
-        reply = os.system("ping -n 1 " + hostname)                          # wordt een ping uitgevoerd om te checken of de host wel beschikbaar is.
-        if reply == 0:                                                      # Indien deze niet beschikbaar is wordt naar de else gesprongen en een melding host down gezet in de log.
+        reply = os.system("ping -n 1 " + hostname)                          # wordt een ping uitgevoerd om te checken of de host wel bereikbaar is.
+        if reply == 0:                                                      # Indien deze niet bereikbaar is wordt naar de else gesprongen en een melding host down gezet in de log.
             client = SoapClient(
                 location='http://'+i+':8008/',
                 action='http://localhost:8008/',  # SOAPAction

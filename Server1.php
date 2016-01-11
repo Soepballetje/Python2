@@ -35,6 +35,7 @@
                             <li  class="active"><a href="Server1.php">Server 1</a></li>
                             <li><a href="Server2.php">Server 2</a></li>
                             <li><a href="Server3.php">Server 3</a></li>
+                            <li><a href="log.php">Server Logging</a></li>
                     </li>
                 </ul>
             </div>
