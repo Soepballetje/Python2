@@ -59,3 +59,58 @@ Toelichting indiviuele delen
 PySimpleSoap
 ----------------------------
 PySimpleSoap is een library die clients en server met elkaar laat communiceren. Dit maakt ,zoals de naam suggereert, gebruik van SOAP. 
+PSutil
+----------------------------
+Verzorgt het uitvragen van de verschillende functies op het OS. Zoals CPU load en het geheugen. 
+
+Powershell
+---------------------------
+Powershell vraagt binnen dit python programma meerdere functionaliteiten op, dit is onder andere vrije disk ruimte maar ook het aantal processen. 
+
+Subprocess
+---------------------------
+Geeft het python programma de mogelijkheid om functies van het OS te starten. In dit programma wordt Powershell gestart. 
+
+Numpy
+----------------------------
+Numpy is een uitbreiding op de python code, het wordt in dit scripts gebruikt om informatie die benodigd is voor de verschillende plots in arrays op te slaan. 
+
+Matplotlib
+----------------------------
+Verzorgt het plotten van de grafieken en saved deze op de server.
+
+lxml
+------------------
+Parsed de XML file voor de hosts.
+
+Logging
+-------------------
+Logs van de verschillende servers worden aangemaakt door de functie logging.
+
+PHP
+-------------------
+Server webpagina's zijn ontworpen op basis van PHP.
+
+Time
+-------------------
+Geeft de juiste tijdsnotatie in de verschillende CSV files maar ook in de logging. 
+
+CSV
+-------------------
+De gegevens uit de metingen worden opgeslagen in een csv geformateerd bestand. deze worden uitgelezen op de webpagina's.
+
+OS
+-------------------
+Importeert het OS in het python programma.
+
+Socket
+-------------------
+In dit python programma wordt het IP adres maar ook de hostname opgrvraagd door de socket.
+
+Uptime
+-------------------
+Met de library wordt de uptime van het systeem in seconden uitgevraagd. Dit wordt omgerekent naar uren. 
+
+CGI
+-------------------
+CGI verzorgt er in dit script voor dat python naar html wordt vertaald.
