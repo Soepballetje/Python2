@@ -7,6 +7,13 @@ Een link naar onze Github:  https://github.com/Soepballetje/Python2/
 
 
 Installatie.
+-----------
+Automatisch
+
+-Installeer de agent.exe op de hosts.
+-installeer de management.exe op de management server.
+------------
+Handmatig
 ------------
 Management installatie:
   Om het management script te kunnen installeren zijn er een aantal prerequisites.
